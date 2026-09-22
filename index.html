@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideNow - Vehicle Booking</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .booking-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      animation: slideUp 1.5s ease;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    button {
+      background: #ff9800;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+      background: #e68900;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      margin-top: 2rem;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 RideNow</h1>
+    <p>Book your ride instantly with style!</p>
+  </header>
+
+  <section class="booking-form">
+    <h2>Book Your Vehicle</h2>
+    <form>
+      <label for="pickup">Pickup Location:</label>
+      <input type="text" id="pickup" name="pickup" required>
+
+      <label for="drop">Drop Location:</label>
+      <input type="text" id="drop" name="drop" required>
+
+      <label for="vehicle">Select Vehicle:</label>
+      <select id="vehicle" name="vehicle">
+        <option value="car">Car</option>
+        <option value="bike">Bike</option>
+        <option value="suv">SUV</option>
+        <option value="van">Van</option>
+      </select>
+
+      <label for="time">Pickup Time:</label>
+      <input type="datetime-local" id="time" name="time" required>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 RideNow. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple confirmation popup
+    document.querySelector("form").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("✅ Your ride has been booked successfully!");
+    });
+  </script>
+</body>
+</html>
